@@ -5,7 +5,8 @@ type Props = {
   error: string
 }
 
-export const ErrorBox = ({ error }: Props) =>
+export const ErrorBox = ({error}: Props) => (
   <div>
     <span>{error}</span>
   </div>
+)

@@ -4,11 +4,11 @@ import ReactDOM from 'react-dom'
 
 import App from './App'
 
-const render = (Component) =>
-  ReactDOM.render(
-    <Component />,
-    document.getElementById('root')
-  )
+import '../node_modules/normalize.css/normalize.css'
+import '../node_modules/@blueprintjs/core/dist/blueprint.css'
+
+const render = Component =>
+  ReactDOM.render(<Component />, document.getElementById('root'))
 
 render(App)
 

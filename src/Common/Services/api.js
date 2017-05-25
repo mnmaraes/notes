@@ -1,7 +1,11 @@
 // @flow
 import apisauce from 'apisauce'
 
-export default function (baseURL: string, options: Object, transform?: (requests: Object) => void) {
+export default function (
+  baseURL: string,
+  options: Object,
+  transform?: (requests: Object) => void
+) {
   const api = apisauce.create({
     baseURL,
     ...options

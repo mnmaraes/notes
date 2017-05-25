@@ -1,22 +1,20 @@
 // @flow
-import { takeEvery } from 'redux-saga/effects'
+import {all, takeEvery} from 'redux-saga/effects'
 
 /* ------------ Services ----------- */
 // Nothing For Now, But Service Imports Go Here
 
 /* ------------- Types ------------- */
-import { CounterTypes } from './Counter/redux'
+import {NoteTypes} from 'Notes/redux'
 
 /* ------------- Sagas ------------- */
-import {
-  double10th
-} from './Counter/saga'
+import {createNote} from 'Notes/saga'
 
 /* ------------- Connect Types To Sagas ------------- */
-export default function * root (
-): Generator<*, *, *> { // eslint-disable-line no-undef
-  yield [
-    // Counter Sagas
-    takeEvery(CounterTypes.INCREMENT_COUNTER, double10th)
-  ]
+export default function * root (): Generator<*, *, *> {
+  // eslint-disable-line no-undef
+  yield all([
+    // Note Sagas
+    takeEvery(NoteTypes.TRIGGER_CREATION, createNote)
+  ])
 }

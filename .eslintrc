@@ -1,0 +1,26 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
+    "space-before-function-paren": [
+      "error",
+      "always"
+    ],
+    "generator-star-spacing" : [
+      "error",
+      "both"
+    ],
+    "react/jsx-indent-props": [2, 2]
+  }
+}

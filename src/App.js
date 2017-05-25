@@ -1,27 +1,22 @@
 // @flow
 import React from 'react'
 
-import { Provider } from 'react-redux'
-// import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-// import { syncHistoryWithStore } from 'react-router-redux'
+import {Provider} from 'react-redux'
+import {Route} from 'react-router'
+import {BrowserRouter} from 'react-router-dom'
+import {createBrowserHistory} from 'history'
+import {syncHistoryWithStore} from 'react-router-redux'
 
-import { store } from './store'
+import {store} from './store'
 
-import { Counter } from './Counter/Containers'
+import {Home} from './Core/Containers'
 
-// import { NotFound } from './Common/Components'
+const history = syncHistoryWithStore(createBrowserHistory(), store)
 
-// const history = syncHistoryWithStore(browserHistory, store)
-
-export default () =>
+export default () => (
   <Provider store={store}>
-    <Counter />
+    <BrowserRouter history={history}>
+      <Route path='/' component={Home} />
+    </BrowserRouter>
   </Provider>
-  // <Provider store={store}>
-  //   <Router history={history}>
-  //     <Route path='/'>
-  //       <IndexRoute component={Counter} />
-  //       <Route path='*' component={NotFound} />
-  //     </Route>
-  //   </Router>
-  // </Provider>
+)

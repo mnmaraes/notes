@@ -5,32 +5,44 @@
   "devDependencies": {
     "flow-bin": "0.45.0",
     "husky": "^0.13.1",
-    "react-scripts": "0.9.5"
+    "prettier-eslint-cli": "^4.0.2",
+    "react-scripts": "0.9.5",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2",
+    "standard-flow": "^1.0.0"
   },
   "dependencies": {
+    "@blueprintjs/core": "^1.16.0",
     "apisauce": "^0.12.0",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1",
     "react-router-redux": "^4.0.7",
+    "recompose": "^0.23.1",
     "redux": "^3.6.0",
     "redux-saga": "^0.15.3",
     "reduxsauce": "^0.5.0",
-    "seamless-immutable": "^7.1.2"
+    "seamless-immutable": "^7.1.2",
+    "uuid": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "lint": "standard --verbose | snazzy",
     "flow": "flow --show-all-errors; test $? -eq 0 -o $? -eq 2",
-    "precommit": "npm run flow"
+    "precommit": "npm run flow",
+    "format": "prettier-eslint --eslint-ignore --write \"./src/**/*.js\""
   },
   "proxy": "http://localhost:5000",
   "standard": {
     "parser": "babel-eslint",
     "globals": [
+      "Generator"
     ],
     "plugins": [
       "flowtype"
